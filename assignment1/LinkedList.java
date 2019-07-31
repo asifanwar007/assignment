@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.io.*;
 
-public class LinkedList<T> extends Position<T> implements LinkedList_<T>{
+public class LinkedList<T> implements LinkedList_<T>{
 	public Position<T> head;
 	public T e;
 	public static int pos = 0;
@@ -16,7 +16,7 @@ public class LinkedList<T> extends Position<T> implements LinkedList_<T>{
 			if (check.hasNext()){
 				c++;
 			} else{
-				break
+				break;
 			}
 		}
 		return c;
@@ -24,8 +24,9 @@ public class LinkedList<T> extends Position<T> implements LinkedList_<T>{
 	}
 	public Position<T> add(T e){
 		pos++;
-		Position<T>(e, pos);
-		return pos;
+		
+		Position<T> n = new Position<T>(e, pos);
+		return n.after();
 		
 	}
 }

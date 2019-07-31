@@ -7,5 +7,5 @@ public interface Student_{
 	public String department();
 	public String completedCredits();
 	public String cgpa();
-	public Iterator<CourseGrade_> courseList();
+	public Iterator<CourseGrade> courseList();
 }

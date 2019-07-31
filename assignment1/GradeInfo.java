@@ -48,5 +48,11 @@ public class GradeInfo implements GradeInfo_{
 		}
 		return a;
 	}
+
+	// public static void main(String[] args) {
+	// 	GradeInfo c = new GradeInfo("D");
+	// 	int d = c.gradepoint(LetterGrade.A);
+	// 	System.out.println(d);
+	// }
 }
 	
