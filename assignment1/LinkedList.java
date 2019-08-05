@@ -77,26 +77,39 @@ public class LinkedList<T> implements LinkedList_<T>
 		// }
 		// n.show();
 
-		
-		// Iterator<Position<Integer>> temp = n.positions();
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
+
+		Iterator<Position<Integer>> temp = n.positions();
+		System.out.println(temp.hasNext());
+		System.out.println(temp.next());
+		System.out.println("---");
+
+		System.out.println(temp.hasNext());
+		System.out.println(temp.next());
+		System.out.println("---");
+
+		System.out.println(temp.hasNext());
+		System.out.println(temp.next());
+		System.out.println("---");
+
+
+		System.out.println(temp.hasNext());
+		System.out.println(temp.next());
+		System.out.println("---");
+
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
+		System.out.println(temp.hasNext());
 
 
 		

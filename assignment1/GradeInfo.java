@@ -2,10 +2,10 @@ import java.util.Iterator;
 import java.io.*;
 
 public class GradeInfo implements GradeInfo_{
-	String grade;
-	public GradeInfo(String grade){
-		this.grade = grade;
-	}
+	// String grade;
+	// public GradeInfo(String grade){
+	// 	this.grade = grade;
+	// }
 
 
 	
@@ -13,7 +13,7 @@ public class GradeInfo implements GradeInfo_{
 		A, Aminus, B, Bminus, C, Cminus, D, E, F, I;
 	}
 	
-	GradeInfo.LetterGrade a = LetterGrade;
+	// GradeInfo.LetterGrade a = LetterGrade;
 	public static int gradepoint(GradeInfo.LetterGrade grade){
 		int a = 0;
 		switch (grade){
@@ -48,8 +48,8 @@ public class GradeInfo implements GradeInfo_{
 	public static void main(String[] args) {
 		String grade = "B";
 
-		GradeInfo c = new GradeInfo(grade);
-		int d = c.gradepoint(LetterGrade.grade);
+		GradeInfo c = new GradeInfo();
+		int d = c.gradepoint(LetterGrade.valueOf(grade));
 		System.out.println(d);
 	}
 }

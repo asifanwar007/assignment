@@ -2,88 +2,132 @@ import java.util.Iterator;
 import java.io.*;
 import java.util.*;
 
-public class Assignment1 {
-
-
-	// String studentRecordFile; //contains personal data about the students
-	// String courseFile; //contains the list of courses taken by students
-	// String studentQueryFile; //contains some queries to process
-
-
-	/**
-
-	 getData reads information per student from 
-	the specified student record file and course file, inserting 
-	the information in the respective 
-	linked lists (e.g., allHostels, allDepartments, allCourses), updating all data structures.
-	*/
+public class Assignment1 {	
+	static LinkedList<String[]> courses_txt_input = new LinkedList<String[]>();
+	static LinkedList<String[]> stuednts_txt_input = new LinkedList<String[]>();
 	private static void getData(String studentRecordFile, String courseFile){
-	LinkedList<String[]> courses_txt_input = new LinkedList<String[]>();
-	try {
-		File file = new File(studentRecordFile);
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			String st;
-			String[] store_value = new String[10];	
-			while ((st = br.readLine()) != null){
-				// System.out.println(st);
-				store_value = st.split(" ");
-				System.out.println(Arrays.toString(store_value));
-				
-			}
-		} catch(Exception e){
-			System.out.println(e);
+		try {
+			File file = new File(studentRecordFile);
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				String st;
+				String[] store_value;
+				while ((st = br.readLine()) != null){
+					// System.out.println(st);
+					store_value = st.split(" ", 4);
+					stuednts_txt_input.add(store_value);			
+				}
+			} catch(Exception e){
+				System.out.println(e);}
+		System.out.println("-----------------------------------------------------");
+		try {
+			File file = new File(courseFile);
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				String st;
+				String[] store_value;	
+				while ((st = br.readLine()) != null){
+					// System.out.println(st);
+					store_value = st.split(" ", 4);
+					courses_txt_input.add(store_value);					
+				}
+			} catch(Exception e){
+				System.out.println(e);}	
+
+	//this is how acces the data
+	System.out.println(courses_txt_input.positions().next().value()[0]);
+
 	}
 
 
-	}
-	
-	/*
-	 getData reads information per student from the specified student 
-	record file and course file, inserting the 
-	information in the respective 
-	linked lists (e.g., allHostels, allDepartments, allCourses), updating all data structures.
-	*/
+	static int number_of_query = 0;
 	private static void answerQueries(String studentQueryFile){
+		LinkedList<String[]> query_txt_input = new LinkedList<String[]>();
+		try {
+			File file = new File(studentQueryFile);
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				String st;
+				String[] store_value;
+				while ((st = br.readLine()) != null){
+					// System.out.println(st);
+					store_value = st.split(" ", 4);
+					query_txt_input.add(store_value);
+					number_of_query++;
+				}
+			} catch(Exception e){
+				System.out.println(e);}
+
+		String[][] queries_to_solve = new String[number_of_query][3];
+		for(int i = 0; i < number_of_query; i++){
+			queries_to_solve[number_of_query-i-1] = query_txt_input.positions().next().value();
+		}
+
+		
 
 
+
+		//adding studtnst dalata in linked list inside answer queries
+		LinkedList<Student> allStudents = new LinkedList<Student>();
+		while (stuednts_txt_input.positions().hasNext()){
+
+			//constructor for students class
+			String name = stuednts_txt_input.positions().next().value()[1];
+			String entry_no = stuednts_txt_input.positions().next().value()[0];
+			String departmetn = stuednts_txt_input.positions().next().value()[2];
+			String hostel = stuednts_txt_input.positions().next().value()[3];
+
+			//adding courseGrade data from courses then appending it to student linked list
+			int gradepoint = 0;
+			int I_grade_counter = 0;
+			LinkedList<CourseGrade> coursegrade_ll = new LinkedList<CourseGrade>();
+			if ((courses_txt_input.positions().value()[0]).equals(name)){
+				String gi = (courses_txt_input.positions().value()[2]);
+				String cn = (courses_txt_input.positions().value()[1]);
+				String ct = (courses_txt_input.positions().value()[3]);
+				CourseGrade cg1 = new CourseGrade(gi, cn, ct);
+				coursegrade_ll.add(cg1);
+				if (gi.equals(I)){
+					I_grade_counter++;
+				} else{
+					gradepint = gradepoint + coursegrade_ll.grade().gradepoint(LetterGrade.valueOf(gi));
+				}
+			} else {
+				while(courses_txt_input.positions().hasNext()){
+					if ((courses_txt_input.positions().next().value()[0]).equals(name)){
+						String gi = (courses_txt_input.positions().value()[2]);
+						String cn = (courses_txt_input.positions().value()[1]);
+						String ct = (courses_txt_input.positions().value()[3]);
+						CourseGrade cg1 = new CourseGrade(gi, cn, ct);
+						coursegrade_ll.add(cg1);
+						if (gi.equals(I)){
+							I_grade_counter++;
+						} else{
+						gradepint = gradepoint + coursegrade_ll.grade().gradepoint(LetterGrade.valueOf(gi));
+						}
+					}
+				}
+			}
+			//calculation of completed credits
+			String completed_credits_cal = coursegrade_ll.count()*3 - 3*I_grade_counter;
+			String completed_credits = completed_credits_cal; 
+
+			//calculation for cgpa of that students
+
+
+			String cGpA = (gradepoint*3)/(coursegrade_ll.count()*3 - 3*I_grade_counter);
+			Student s1 = new Student(name, entry_no, departmetn, hostel, completed_credits, cGpA);
+			allStudents.add(s1);
+			stuednts_txt_input.positions().next();
+				
+		}
+		System.out.println("inside answerQueries: " + number_of_query);
+		System.out.println(courses_txt_input.positions().next().value()[0]);
 	}
+
+
 	public static void main(String[] args) {
 
 
-		Assignment1 get = new Assignment1();
-		get.getData("hello.txt","asif");
-
-		// try{
-		// 	FileInputStream fo = new FileInputStream("hello.txt");
-		// 	int i = 0;
-		// 	// i = fo.read();
-		// 	// System.out.println(i);
-		// 	while((i=fo.read())!= -1){
-		// 		// System.out.print((char)i + "i");
-		// 		// System.out.println("print inside while loop");
-		// 	}
-		// 	fo.close();
-		// } catch(Exception e){
-		// 	System.out.println(e);
-		// } 
-
-		// try {
-		// 	File file = new File("hello.txt");
-		// 	BufferedReader br = new BufferedReader(new FileReader(file));
-		// 	String st;
-		// 	while ((st = br.readLine()) != null){
-		// 		System.out.println(st);
-		// 	} 
-		// }catch(Exception e){
-		// 		System.out.println(e + " file not able to read");
-		// 	}
-		
-
-		// course extends entity;
-		// LinkedList<Entity> allCourses = new LinkedList<Entity>;
-		// public LinkedList<Entity>
-
-
-		
+		Assignment1 assign = new Assignment1();
+		assign.getData("students.txt","courses.txt");
+		assign.answerQueries("query.txt");		
 	}
 }

@@ -20,7 +20,7 @@ public class CourseGrade implements CourseGrade_{
 
 	
 	public GradeInfo grade(){
-		GradeInfo s = new GradeInfo(gradeinfo);
+		GradeInfo s = new GradeInfo();
 		return s;
 	}
 	
