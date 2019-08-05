@@ -8,6 +8,7 @@ public class Student implements Student_{
 	String department;
 	String completedCredits;
 	String cgpa;
+	LinkedList<CourseGrade> courselis;
 
 	public Student(String name, String entryNo, String hostel, String department, String completedCredits, String cgpa){
 		this.name = name;
@@ -35,9 +36,11 @@ public class Student implements Student_{
 	public String cgpa(){
 		return cgpa;
 	}
+
 	
 	public Iterator<CourseGrade> courseList(){
-		
+
+		return new LinkedListIterator(courselis.head);
 	}
 	
 }

@@ -2,5 +2,5 @@ import java.util.Iterator;
 
 public interface Entity_{
 	public String name();
-	public Iterator<Student_> studentList();
+	public Iterator<Student> studentList();
 }

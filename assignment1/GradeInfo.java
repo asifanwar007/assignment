@@ -6,12 +6,14 @@ public class GradeInfo implements GradeInfo_{
 	public GradeInfo(String grade){
 		this.grade = grade;
 	}
+
+
 	
 	enum LetterGrade{
 		A, Aminus, B, Bminus, C, Cminus, D, E, F, I;
 	}
 	
-	
+	GradeInfo.LetterGrade a = LetterGrade;
 	public static int gradepoint(GradeInfo.LetterGrade grade){
 		int a = 0;
 		switch (grade){
@@ -36,23 +38,19 @@ public class GradeInfo implements GradeInfo_{
 		case D:
 			a = 4;
 			break;
-		case E:
-			a = 3;
-			break;
-		case F:
-			a = 2;
-			break;
+		
 		default:
 			a = 0;
-		
 		}
 		return a;
 	}
 
-	// public static void main(String[] args) {
-	// 	GradeInfo c = new GradeInfo("D");
-	// 	int d = c.gradepoint(LetterGrade.A);
-	// 	System.out.println(d);
-	// }
+	public static void main(String[] args) {
+		String grade = "B";
+
+		GradeInfo c = new GradeInfo(grade);
+		int d = c.gradepoint(LetterGrade.grade);
+		System.out.println(d);
+	}
 }
 	

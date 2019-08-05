@@ -4,6 +4,7 @@ import java.util.Iterator;
 public class Entity implements Entity_{
 	String n;
 	Iterator<Student> s;
+	LinkedList<Student> student_List;
 	
 	public Entity(String n, Iterator<Student> s){
 		this.n = n;
@@ -13,6 +14,7 @@ public class Entity implements Entity_{
 		return n;
 	}
 	public Iterator<Student> studentList(){
+		return new LinkedListIterator(student_List.head);
 		
 	}
 }
