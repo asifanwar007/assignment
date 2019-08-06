@@ -67,8 +67,8 @@ public class LinkedList<T> implements LinkedList_<T>
 		n.add(1);
 		n.add(2);
 		n.add(3);
-		n.add(2);
-		n.add(3);
+		n.add(4);
+		n.add(5);
 		n.add(2123);
 		// Position<Integer> check = n.head;
 		// while(check!=null){
@@ -79,8 +79,17 @@ public class LinkedList<T> implements LinkedList_<T>
 
 
 		Iterator<Position<Integer>> temp = n.positions();
+		Position<Integer> temp1 = n.head;
+		while (temp1.after() != null){
+
+			System.out.println(temp1.value());
+			temp1 = temp1.after();
+		}	
+		System.out.println(temp1.value());
+
 		System.out.println(temp.hasNext());
-		System.out.println(temp.next());
+		// System.out.println(temp.value());
+		System.out.println(temp.next().value());
 		System.out.println("---");
 
 		System.out.println(temp.hasNext());
@@ -96,20 +105,20 @@ public class LinkedList<T> implements LinkedList_<T>
 		System.out.println(temp.next());
 		System.out.println("---");
 
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
-		System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
+		// System.out.println(temp.hasNext());
 
 
 		

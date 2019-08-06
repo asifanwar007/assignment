@@ -1,6 +1,6 @@
 import java.util.Iterator;
 import java.io.*;
-import java.util.*;
+
 
 public class Assignment1 {	
 	static LinkedList<String[]> courses_txt_input = new LinkedList<String[]>();
@@ -75,36 +75,7 @@ public class Assignment1 {
 			String hostel = stuednts_txt_input.positions().next().value()[3];
 
 			//adding courseGrade data from courses then appending it to student linked list
-			int gradepoint = 0;
-			int I_grade_counter = 0;
-			LinkedList<CourseGrade> coursegrade_ll = new LinkedList<CourseGrade>();
-			if ((courses_txt_input.positions().value()[0]).equals(name)){
-				String gi = (courses_txt_input.positions().value()[2]);
-				String cn = (courses_txt_input.positions().value()[1]);
-				String ct = (courses_txt_input.positions().value()[3]);
-				CourseGrade cg1 = new CourseGrade(gi, cn, ct);
-				coursegrade_ll.add(cg1);
-				if (gi.equals(I)){
-					I_grade_counter++;
-				} else{
-					gradepint = gradepoint + coursegrade_ll.grade().gradepoint(LetterGrade.valueOf(gi));
-				}
-			} else {
-				while(courses_txt_input.positions().hasNext()){
-					if ((courses_txt_input.positions().next().value()[0]).equals(name)){
-						String gi = (courses_txt_input.positions().value()[2]);
-						String cn = (courses_txt_input.positions().value()[1]);
-						String ct = (courses_txt_input.positions().value()[3]);
-						CourseGrade cg1 = new CourseGrade(gi, cn, ct);
-						coursegrade_ll.add(cg1);
-						if (gi.equals(I)){
-							I_grade_counter++;
-						} else{
-						gradepint = gradepoint + coursegrade_ll.grade().gradepoint(LetterGrade.valueOf(gi));
-						}
-					}
-				}
-			}
+			CourseGrade_ll courseGrade_ll = new CourseGrade_ll(courses_txt_input, entry_no);
 			//calculation of completed credits
 			String completed_credits_cal = coursegrade_ll.count()*3 - 3*I_grade_counter;
 			String completed_credits = completed_credits_cal; 
