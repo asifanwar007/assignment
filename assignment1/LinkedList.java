@@ -51,87 +51,100 @@ public class LinkedList<T> implements LinkedList_<T>
 	// }
 
 	public int count(){
-		int i = 0;
+		int i = 1;
 		Position<T> node = head;
 		while(node.after() != null){
+			i++;
 			node = node.after();
 			// System.out.println("inside while statement");
-			i++;
+			
 		}
 		return i;
 	}
 
 	
-	public static void main(String[] args) {
-		LinkedList<Integer> n = new LinkedList<Integer>();
-		n.add(1);
-		n.add(2);
-		n.add(3);
-		n.add(4);
-		n.add(5);
-		n.add(2123);
-		// Position<Integer> check = n.head;
-		// while(check!=null){
-		// 	System.out.println(check.v);
-		// 	check = check.n;
-		// }
-		// n.show();
+	// public static void main(String[] args) {
+	// 	LinkedList<Integer> n = new LinkedList<Integer>();
+	// 	n.add(1);
+	// 	n.add(2);
+	// 	n.add(3);
+	// 	n.add(4);
+	// 	n.add(5);
+	// 	n.add(2123);
+	// 	// Position<Integer> check = n.head;
+	// 	// while(check!=null){
+	// 	// 	System.out.println(check.v);
+	// 	// 	check = check.n;
+	// 	// }
+	// 	// n.show();
 
 
-		Iterator<Position<Integer>> temp = n.positions();
-		Position<Integer> temp1 = n.head;
-		while (temp1.after() != null){
+	// 	Iterator<Position<Integer>> temp = n.positions();
+	// 	Position<Integer> temp1 = n.head;
+	// 	// System.out.println(temp.next().value());
+	// 	// System.out.println(temp.next().value());
+	// 	// System.out.println(temp.next().value());
+	// 	// System.out.println(temp.next().value());
+	// 	// System.out.println(temp.next().value());
+	// 	int totala = 0;
+	// 	// System.out.println(totala);
+	// 	while(temp.hasNext()){
+	// 		totala++;
+	// 		System.out.println(temp.hasNext());
+	// 		System.out.println(temp.next().value());
+	// 		// System.out.println(n.positions().value());
 
-			System.out.println(temp1.value());
-			temp1 = temp1.after();
-		}	
-		System.out.println(temp1.value());
-
-		System.out.println(temp.hasNext());
-		// System.out.println(temp.value());
-		System.out.println(temp.next().value());
-		System.out.println("---");
-
-		System.out.println(temp.hasNext());
-		System.out.println(temp.next());
-		System.out.println("---");
-
-		System.out.println(temp.hasNext());
-		System.out.println(temp.next());
-		System.out.println("---");
+	// 	}	
 
 
-		System.out.println(temp.hasNext());
-		System.out.println(temp.next());
-		System.out.println("---");
+	// 	System.out.println(" this is end-----" + totala);
+	// 	// System.out.println(temp.next().value());
 
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
-		// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// // System.out.println(temp.value());
+	// 	// System.out.println(temp.next().value());
+	// 	// System.out.println("---");
+
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.next());
+	// 	// System.out.println("---");
+
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.next());
+	// 	// System.out.println("---");
+
+
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.next());
+	// 	// System.out.println("---");
+
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
+	// 	// System.out.println(temp.hasNext());
 
 
 		
-		// while(temp.hasNext()){
+	// 	// while(temp.hasNext()){
 			
-		// 	System.out.println(temp.next());
-		// }
+	// 	// 	System.out.println(temp.next());
+	// 	// }
 
-		// System.out.println(n.count());
-		// n.show();
+	// 	// System.out.println(n.count());
+	// 	// n.show();
 
-		// System.out.println(n);
+	// 	// System.out.println(n);
 
-	}
+	// }
 }
 
