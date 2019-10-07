@@ -1,9 +1,6 @@
 import java.util.Iterator;
 import java.io.*;
 
-
-
-
 public class LinkedList<T> implements LinkedList_<T>
 {
 	public Position<T> head;
